@@ -1,19 +1,24 @@
 
-import { useState, useRef, useCallback } from "react";
-import usePosts from "./hooks/usePosts";
+import { useRef, useCallback } from "react";
 import { confirmAlert } from "react-confirm-alert";
 import 'react-confirm-alert/src/react-confirm-alert.css';
-import { isError } from "react-query";
 import Post from "./Post";
+import { useInfiniteQuery } from "react-query";
+import { getPostsPage } from "./api/axios";
 
-const Example1 = () => {
-  const [pageNum, setPageNum] = useState(1);
-  const { loading, isError, error, results, hasNextPage } = usePosts(pageNum);
+
+const Example2 = () => {
+    const { fetchNextPage, hasNextPage, isFetchingNextPage, data, status, error } = 
+    useInfiniteQuery('/posts', ({pageParam = 1}) => getPostsPage(pageParam), {
+        getNextPageParam: (lastPage, allPages) => {
+            return lastPage.length ? allPages.length + 1 : undefined
+        }
+    })
+
   const intObserver = useRef();
   
-  
   const lastPostRef = useCallback((post) => {
-    if(loading) return;
+    if(isFetchingNextPage) return;
     
     if(intObserver.current) intObserver.current.disconnect();
 
@@ -25,7 +30,7 @@ const Example1 = () => {
           {
             label: "Yes",
             onClick: () => {
-              setPageNum((prev) => prev + 1)
+                fetchNextPage()
             }
           },
           {label: "No"}
@@ -41,7 +46,7 @@ const Example1 = () => {
   });
   
   if(post) intObserver.current.observe(post);
-}, [loading, hasNextPage]);
+}, [isFetchingNextPage, fetchNextPage, hasNextPage]);
 
 if (isError) return <p className="center">Error : {error.message} </p>
 
@@ -72,4 +77,4 @@ const content = results.map((post, i) => {
   )
 };
 
-export default Example1;
+export default Example2;
