@@ -22,7 +22,7 @@ const usePosts = (pageNum = 1) => {
         .then(data => {
             setResults(prev => [...prev, ...data])
             setHasNextPage(Boolean(data.length))
-            setLoading(false)
+            setLoading(false);
         })
         .catch (e => {
             setLoading(false)
