@@ -29,7 +29,7 @@ const usePosts = (pageNum = 1) => {
             if(signal.aborted) return
             setIsError(true)
             setError({ message: e.message})
-        })
+        });
 
         return () => controller.abort()
     }, [pageNum]);
