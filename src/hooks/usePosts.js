@@ -16,7 +16,7 @@ const usePosts = (pageNum = 1) => {
         setError({})
 
         const controller = new AbortController()
-        const { signal } = controller
+        const { signal } = controller;
 
         getPostsPage(pageNum, { signal })
         .then(data => {
