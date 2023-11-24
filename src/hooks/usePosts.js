@@ -11,7 +11,7 @@ const usePosts = (pageNum = 1) => {
     const [ hasNextPage, setHasNextPage ] = useState(false)
 
     useEffect(() => {
-        setLoading(true)
+        setLoading(true);
         setIsError(false);
         setError({});
 
