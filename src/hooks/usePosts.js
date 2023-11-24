@@ -32,7 +32,7 @@ const usePosts = (pageNum = 1) => {
         })
 
         return () => controller.abort()
-    }, [pageNum])
+    }, [pageNum]);
 
   return { loading, isError, error, results, hasNextPage }
 };
