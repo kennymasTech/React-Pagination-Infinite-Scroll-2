@@ -25,7 +25,7 @@ const usePosts = (pageNum = 1) => {
             setLoading(false);
         })
         .catch (e => {
-            setLoading(false)
+            setLoading(false);
             if(signal.aborted) return
             setIsError(true);
             setError({ message: e.message})
