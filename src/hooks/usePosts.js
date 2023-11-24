@@ -12,7 +12,7 @@ const usePosts = (pageNum = 1) => {
 
     useEffect(() => {
         setLoading(true)
-        setIsError(false)
+        setIsError(false);
         setError({});
 
         const controller = new AbortController();
