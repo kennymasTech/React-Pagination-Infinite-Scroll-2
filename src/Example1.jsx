@@ -30,8 +30,8 @@ const Example1 = () => {
           },
           {label: "No"}
         ]
-      });
-    }
+      })
+    };
     
     intObserver.current = new IntersectionObserver((post) => {
       if(post[0].isIntersecting && hasNextPage) {
