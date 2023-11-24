@@ -37,7 +37,7 @@ const Example1 = () => {
       if(post[0].isIntersecting && hasNextPage) {
         console.log("we are near the last post");
         confirmLoad();
-      }
+      };
   });
   
   if(post) intObserver.current.observe(post);
