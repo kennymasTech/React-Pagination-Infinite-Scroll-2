@@ -59,7 +59,7 @@ const content = results.map((post, i) => {
             &infin; Infinite Query &amp; Scroll
             <br/>
             &infin; Ex. 1 - React Only
-        </h1>
+        </h1>;
 
         {content};
 
