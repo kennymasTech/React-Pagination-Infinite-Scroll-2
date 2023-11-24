@@ -30,7 +30,7 @@ const Example1 = () => {
           },
           {label: "No"}
         ]
-      })
+      });
     };
     
     intObserver.current = new IntersectionObserver((post) => {
