@@ -8,7 +8,7 @@ const usePosts = (pageNum = 1) => {
     const [ loading, setLoading ] = useState(false)
     const [ error, setError ] = useState({})
     const [ isError, setIsError ] = useState(false)
-    const [ hasNextPage, setHasNextPage ] = useState(false)
+    const [ hasNextPage, setHasNextPage ] = useState(false);
 
     useEffect(() => {
         setLoading(true);
