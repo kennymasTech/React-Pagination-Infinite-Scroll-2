@@ -25,7 +25,7 @@ const Example1 = () => {
           {
             label: "Yes",
             onClick: () => {
-              setPageNum((prev) => prev + 1)
+              setPageNum((prev) => prev + 1);
             }
           },
           {label: "No"}
