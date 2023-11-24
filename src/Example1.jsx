@@ -69,7 +69,7 @@ const content = results.map((post, i) => {
             <a href="#top">Back To Top</a>
         </p>
     </>
-  )
+  );
 };
 
 export default Example1;
