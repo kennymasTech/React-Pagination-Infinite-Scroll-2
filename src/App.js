@@ -12,7 +12,7 @@ function App() {
       <Example2 />
     </div>
   );
-}
+};
 
 export default App;
  
