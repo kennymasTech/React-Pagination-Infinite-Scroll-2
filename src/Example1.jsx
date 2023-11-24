@@ -4,7 +4,7 @@ import usePosts from "./hooks/usePosts";
 import { confirmAlert } from "react-confirm-alert";
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import Post from "./Post";
-// import { isError } from "react-query";
+import { isError } from "react-query";
 
 const Example1 = () => {
   const [pageNum, setPageNum] = useState(1);
