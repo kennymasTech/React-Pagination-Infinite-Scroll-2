@@ -37,4 +37,4 @@ const usePosts = (pageNum = 1) => {
   return { loading, isError, error, results, hasNextPage }
 };
 
-export default usePosts
+export default usePosts;
