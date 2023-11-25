@@ -15,6 +15,7 @@ const usePosts = (pageNum = 1) => {
         setIsError(false);
         setError({});
 
+        
         const controller = new AbortController();
         const { signal } = controller;
 
