@@ -17,7 +17,6 @@ const usePosts = (pageNum = 1) => {
 
 
 
-
         const controller = new AbortController();
         const { signal } = controller;
 
