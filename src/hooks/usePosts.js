@@ -38,3 +38,4 @@ const usePosts = (pageNum = 1) => {
 };
 
 export default usePosts;
+
